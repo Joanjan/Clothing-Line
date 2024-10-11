@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="Prime" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html"><b>Home</b></a></li>
+                    <li><a href="product.html"><b>Products</b></a></li>
+                    <li><a href="about.html"><b>About</b></a></li>
+                    <li><a href="contact.html"><b>Contact</b></a></li>
+                    <li><a href="account.html"><b>Account</b></a></li>
+                </ul>
+            </nav>
+            <a href="Cart.html"><img src="Cart.png" width="30px" height="30px"></a>
+            <img src="Menu.webp" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+</div>
+
+<!-- Product Section -->
+<div class="row">
+    <div class="Product">
+        <img src="WhatsApp Image 2024-10-04 at 12.46.30_d528f3ad.jpg" width="200px" height="200px">
+        <h2>Fleece Hoodie</h2>
+        <p>KES 1000</p>
+        <button class="btn" onclick="addToCart('Fleece Hoodie', 1000)">Add to Cart</button>
+    </div>
+
+    <div class="Product">
+        <img src="WhatsApp Image 2024-10-04 at 14.53.23_a9c88e7e.jpg" width="200px" height="200px">
+        <h2>Black and White Jumper</h2>
+        <p>KES 1400</p>
+        <button class="btn" onclick="addToCart('Black and White Jumper', 1400)">Add to Cart</button>
+    </div>
+
+    <div class="Product">
+        <img src="Whatsapp Image 2024-10-04 at 14.56.33_60702940.jpg" width="200px" height="200px">
+        <h2>Red Fleece Jumper</h2>
+        <p>KES 1500</p>
+        <button class="btn" onclick="addToCart('Red Fleece Jumper', 1500)">Add to Cart</button>
+    </div>
+
+    <div class="Product">
+        <img src="WhatsApp Image 2024-10-04 at 15.08.49_2bfb9c40.jpg" width="200px" height="200px">
+        <h2>Dotted Long Fleece</h2>
+        <p>KES 2200</p>
+        <button class="btn" onclick="addToCart('Dotted Long Fleece', 2200)">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Additional product rows omitted for brevity -->
+
+<!--------Footer-------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android</p>
+                <div class="app-logo">
+                    <img src="google.png" width="130px" height="50px">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Posts</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Tiktok</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="Copyright"> Copyright 2024 - Prime thrift. All Rights Reserved</p>
+    </div>
+</div>
+
+<!--------JS for toggle menu and add to cart-------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+    let cart = [];
+
+    function addToCart(product, price) {
+        cart.push({ product, price });
+        alert(`${product} has been added to your cart!`);
+    }
+</script>
+
+</body>
+</html>
